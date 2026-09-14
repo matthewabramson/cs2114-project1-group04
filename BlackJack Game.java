@@ -41,6 +41,12 @@ public class BlackJackGame {
     dealer.clearHand();
     Player.getHand().clear;
 
+    int bet = input.getBet(player.getBankroll)); 
+    if (!player.placebet(bet)) { 
+      System.out.printIn("Invalid Bet."); 
+      return;
+    }
+
       
     
 
