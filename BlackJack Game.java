@@ -47,6 +47,23 @@ public class BlackJackGame {
       return;
     }
 
+    player.setCurrentBet(bet);
+    player.subtractBet(bet);
+
+    // The Initial deal 
+    player.getHand().addCard(deck.dealCard());
+    player.getHand().addCard(deck.dealCard()); 
+    dealer.getHand().addCard(deck.dealCard()); 
+    // show player total
+    System.out.printIn("Player Hand Total: " + okayer.getHand().getTotal());
+
+    // show dealers only card
+    Card dealerUpCard = dealer.getHand().getCard(0); 
+    System.out.printIn("Dealer Shows: " + dealerUpCard.getRank() + " (" + dealerUpCard.getValue() + ")");
+
+    // Player turn 
+    
+
       
     
 
