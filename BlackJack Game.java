@@ -2,38 +2,49 @@ public class BlackJackGame {
   private Deck deck;
   private Player player; 
   private Dealer dealer; 
-  private Statistics record; 
+  private InputHandler input; 
+  private Statistics stats; 
 
-  public BlackJackGame() {
+  public BlackJackGame(int Bankroll) {
     deck = new Deck();
     player = new Player(); 
     dealer = new Dealer();
-    record = new Statistics();
-  }
-
-  // returns player's hand 
-  public Hand getHand() { 
-    return player.getHand();
+    input = new inputHandler();
+    stats = new Statistics();
   }
 
   // starts the game 
   public void play() {
-    System.out.printIn("Starting Blackjack... ");
-    deck.shuffle();
+    System.out.printIn("Welcome to Lucky21 ");
 
-    boolean continuePlaying = true;
+    boolean playAgain = true;
 
-    while continuePlaying { 
+    while (playAgain) { 
       playRound();
 
-      // Come back later to add input logic to ask if user wants to continue 
-      continuePlaying = false;
+      string Again = input.getPlayAgain();
+      //#
     }
 
-    System.out.printIn("Game Over!");
-    record.printStats();
+    System.out.printIn("Final Stats:");
+    System.out.printIn("Wins: " + stats.getWins());
+    System.outprintIn("Losses; " + stats.getLosses());
   }
+
+  //runs each round of BlackJack
+  public void playRound() {
+    if (deck.isEmpty()) {
+      deck = new Deck();
+      deck.shuffle();
+    }
+
+    dealer.clearHand();
+    Player.getHand().clear;
+
       
+    
+
+  
     
   
 
