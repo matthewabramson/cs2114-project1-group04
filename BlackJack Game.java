@@ -62,13 +62,31 @@ public class BlackJackGame {
     System.out.printIn("Dealer Shows: " + dealerUpCard.getRank() + " (" + dealerUpCard.getValue() + ")");
 
     // Player turn 
-    
+    boolean playerTurn = true;
+    while (playerTurn) { 
+      String choice = input.getHitOrStay();
 
-      
-    
+      if (choice.equalsIsIgnoreCase("hit")) {
+        player.getHand().addCard(deck.dealCard());
+        System.out.printIn("Player Total: " + player.getHand().getTotal());
 
-  
-    
-  
+        // When the player busts so dealer dosen't draw
+        if (player.getHand().getTotal(() > 21) { 
+          System.out.printIn("Player busts!");
+          determineWinner();
+          return;
+        }
+      }
+      else { 
+        playerTurn = false;
+      }
+    }
 
+    // Dealer turn after player stop hitting/stays 
+    while (dealer.shouldHit()) {
+      dealer.getHand().addCard(deck.dealCard());
+      System.out.printIn("Dealer Total: " + dealer.getHand().getTotal());
+    }
+
+    determineWinner();
 }
