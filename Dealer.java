@@ -1,13 +1,29 @@
-public class Dealer extends Hand {
+public class Dealer {
  
-  private
+  private Hand hand; 
 
+ public Dealer() { 
+  hand = new Hand(); 
+ }
 
+ // start dealer with cards for their hand
+ public Hand getHand() { 
+  return hand; 
+ }
 
+ // when the dealer should keep hitting (if hand is less than 17)
+ public boolean shouldHit() { 
+  if (hand.getTotal() < 17) { 
+   return true; 
+  } 
+  else { 
+   return false; 
+  }
+ }
 
-  // Methods Dealer classes uses:
-  //public Hand getHand(){} - Returns the dealer’s current hand
-  //public boolean shouldHit(){} - determines whether the dealer should receive another card
-  // public void clearHand(){} - clears the dealers current hand
-
+ // clear dealer and when starting a game 
+ public void clearHand() { 
+  hand.clear();
+ }
 }
+
