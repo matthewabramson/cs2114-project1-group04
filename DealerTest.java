@@ -39,5 +39,19 @@ public class DealerTest{
 
     assertFalse(dealer.shouldHit(); 
   }
+
+  @Test 
+  public void testClearHand() {
+    Dealer dealer = new Dealer(); 
+
+    dealer.getHand().addCard(new Card("10", 10));
+    dealer.getHand().addCard( new Card("5", 5)); 
+
+    assertEquals(15, dealer.getHand().getTotal()); 
+
+    dealer.clearHand(); 
+
+    assertEquals(0, dealer.getHand().getTotal());
+  }
 }
     
