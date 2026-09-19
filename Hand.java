@@ -1,29 +1,30 @@
-public class Hand{
+import java.util.ArrayList;
 
-  private ArrayList<Cards> cards;
+public class Hand {
 
-  import.java.until.ArrayList;
+    private ArrayList<Card> cards;
 
-  public Hand(){
-    cards = new ArrayList<Cards>
-  }
-  pubic void addCard(Card card){
-    cards.add(card);
-  }
+    public Hand() {
+        cards = new ArrayList<Card>();
+    }
 
-  public int getTotal(){
-    int total = 0
-    int aces = 0
+    public void addCard(Card card) {
+        cards.add(card);
+    }
 
-    for (Card card: cards) {
+    public int getTotal() {
+        int total = 0;
+        int aces = 0;
+
+        for (Card card : cards) {
             total += card.getValue();
 
-            if (card.isAce()) {
+            if (card.getRank().equals("Ace")) {
                 aces++;
             }
         }
 
-        // Change an Ace from 11 to 1 if the hand would bust
+        // Change Aces from 11 to 1 if the hand would bust
         while (total > 21 && aces > 0) {
             total -= 10;
             aces--;
