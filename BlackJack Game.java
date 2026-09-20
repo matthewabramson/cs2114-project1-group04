@@ -47,6 +47,7 @@ public class BlackJackGame {
       System.out.println("Invalid Bet."); 
       return;
     }
+  }
     public void determineWinner(){
       int playerTotal = player.getHand().getTotal();
       int dealerTotal = dealer.getHand().getTotal();
@@ -66,6 +67,7 @@ public class BlackJackGame {
         player.addWinnings();
         stats.addWin();
       }
+    
       else if (dealerTotal > playerTotal) {
         System.out.println("Dealer Wins!");
         player.subtractBet();
@@ -74,6 +76,7 @@ public class BlackJackGame {
       else {
         System.out.println("It is a tie");
       }
+    }
         
     
 
