@@ -6,11 +6,11 @@ public class Statistics {
     losses = 0;
   }
 
-  public void addWin(){
+  public void returnWin(){
     wins ++;
   }
 
-  public void addLoss(){
+  public void returnLoss(){
     losses ++;
   }
 
