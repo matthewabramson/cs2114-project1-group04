@@ -22,7 +22,7 @@ public class CardTest
         assertEquals(card2.getRank(), "10");
     }
 
-
+//
     /**
      * Test the Card get value method.
      */
