@@ -24,14 +24,14 @@ public class BlackJackGame {
 
       String again = input.getPlayAgain();
       
-      if (again.equalsIsIgnoreCase("leave")) {
-        playAgain = false
+      if (again.equalsIgnoreCase("leave")) {
+        playAgain = false;
       }
     }
 
     System.out.println("Final Stats:");
     System.out.println("Wins: " + stats.getWins());
-    System.out.println("Losses; " + stats.getLosses());
+    System.out.println("Losses: " + stats.getLosses());
   }
 
   //runs each round of BlackJack
@@ -69,7 +69,7 @@ public class BlackJackGame {
     while (playerTurn) { 
       String choice = input.getHitOrStay();
 
-      if (choice.equalsIsIgnoreCase("hit")) {
+      if (choice.equalsIgnoreCase("hit")) {
         player.getHand().addCard(deck.dealCard());
         System.out.println("Player Total: " + player.getHand().getTotal());
 
