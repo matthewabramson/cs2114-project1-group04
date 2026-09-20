@@ -1,57 +1,93 @@
 package blackjack;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-public class DealerTest extends student.TestCase{
+/**
+ * Tests the Dealer class.
+ */
+public class DealerTest {
 
-  
-  public void testGetHand() {
-    Dealer dealer = new Dealer();
+    /**
+     * Tests that the dealer has a hand when created.
+     */
+    @Test
+    public void testGetHand() {
 
-    assertNotNull(dealer.getHand()); 
-  }
+        Dealer dealer = new Dealer();
 
-  
-  public void testShouldHitBelow17() { 
-    Dealer dealer = new Dealer();
+        assertNotNull(dealer.getHand());
+    }
 
-    dealer.getHand().addCard(new Card("10", "♠\uFE0F", 10)); 
-    dealer.getHand().addCard(new Card("6","♥\uFE0F", 6)); 
+    /**
+     * Tests that the dealer should hit when the hand is below 17.
+     */
+    @Test
+    public void testShouldHitBelow17() {
 
-    assertTrue(dealer.shouldHit()); 
-  }
+        Dealer dealer = new Dealer();
 
-  
-  public void testShouldHitAt17() { 
-    Dealer dealer = new Dealer();
+        dealer.getHand().addCard(
+            new Card("10", "♠\uFE0F", 10));
 
-    dealer.getHand().addCard(new Card("10", "♠\uFE0F", 10)); 
-    dealer.getHand().addCard(new Card("7","♥\uFE0F", 7)); 
-    
-    assertTrue(dealer.shouldHit()); 
-  }
+        dealer.getHand().addCard(
+            new Card("6", "♥\uFE0F", 6));
 
-  
-  public void testShouldHitAbove17() { 
-    Dealer dealer = new Dealer();
+        assertTrue(dealer.shouldHit());
+    }
 
-    dealer.getHand().addCard(new Card("10","♠\uFE0F", 10)); 
-    dealer.getHand().addCard(new Card("8", "♥\uFE0F", 8)); 
+    /**
+     * Tests that the dealer should hit when the hand is exactly 17.
+     */
+    @Test
+    public void testShouldHitAt17() {
 
-    assertFalse(dealer.shouldHit()); 
-  }
+        Dealer dealer = new Dealer();
 
-  
-  public void testClearHand() {
-    Dealer dealer = new Dealer(); 
+        dealer.getHand().addCard(
+            new Card("10", "♠\uFE0F", 10));
 
-    dealer.getHand().addCard(new Card("10","♠\uFE0F", 10));
-    dealer.getHand().addCard( new Card("5", "♥\uFE0F", 5)); 
+        dealer.getHand().addCard(
+            new Card("7", "♥\uFE0F", 7));
 
-    assertEquals(15, dealer.getHand().getTotal()); 
+        assertTrue(dealer.shouldHit());
+    }
 
-    dealer.clearHand(); 
+    /**
+     * Tests that the dealer should not hit when the hand is above 17.
+     */
+    @Test
+    public void testShouldHitAbove17() {
 
-    assertEquals(0, dealer.getHand().getTotal());
-  }
+        Dealer dealer = new Dealer();
+
+        dealer.getHand().addCard(
+            new Card("10", "♠\uFE0F", 10));
+
+        dealer.getHand().addCard(
+            new Card("8", "♥\uFE0F", 8));
+
+        assertFalse(dealer.shouldHit());
+    }
+
+    /**
+     * Tests that clearing the dealer's hand removes all cards.
+     */
+    @Test
+    public void testClearHand() {
+
+        Dealer dealer = new Dealer();
+
+        dealer.getHand().addCard(
+            new Card("10", "♠\uFE0F", 10));
+
+        dealer.getHand().addCard(
+            new Card("5", "♥\uFE0F", 5));
+
+        assertEquals(15, dealer.getHand().getTotal());
+
+        dealer.clearHand();
+
+        assertEquals(0, dealer.getHand().getTotal());
+    }
 }
-    
