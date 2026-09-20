@@ -15,7 +15,7 @@ public class BlackJackGame {
 
   // starts the game 
   public void play() {
-    System.out.printIn("Welcome to Lucky21 ");
+    System.out.printIn("Welcome to Lucky 21 ");
 
     boolean playAgain = true;
 
