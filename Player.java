@@ -7,7 +7,7 @@ public class Player{
   public Player(int bankroll){
     this.bankroll = bankroll;
     this.currentBet = 0;
-    this.hand = new Hand;
+    this.hand = new Hand();
   }
 
   public Hand getHand(){
