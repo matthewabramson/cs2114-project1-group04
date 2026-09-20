@@ -10,6 +10,22 @@ public class Deck{
     private static ArrayList<String> cardsDealt = new ArrayList<>();
     private static Random random = new Random();
 
+    public void shuffle() {
+
+    for (int i = cards.size() - 1; i > 0; i--) {
+
+        int j = random.nextInt(i + 1);
+
+        Card temp = cards.get(i);
+        cards.set(i, cards.get(j));
+        cards.set(j, temp);
+        }
+    }
+
+    public boolean isEmpty() {
+    return cards.isEmpty();
+    }
+    
     public Card dealCard() {
 
         boolean dealCard = true;
