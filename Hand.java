@@ -12,6 +12,10 @@ public class Hand {
         cards.add(card);
     }
 
+    public void clear(){
+        cards.clear();
+    }
+    
     public int getTotal() {
         int total = 0;
         int aces = 0;
