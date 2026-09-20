@@ -1,11 +1,12 @@
-public class BlackJackGame { 
+package blackjack;
+public class BlackjackGame { 
   private Deck deck;
   private Player player; 
   private Dealer dealer; 
   private InputHandler input; 
   private Statistics stats; 
 
-  public BlackJackGame(int bankroll) {
+  public BlackjackGame(int bankroll) {
     deck = new Deck();
     player = new Player(bankroll); 
     dealer = new Dealer();
@@ -32,7 +33,7 @@ public class BlackJackGame {
     System.out.println("Final Stats:");
     System.out.println("Wins: " + stats.getWins());
     System.out.println("Losses: " + stats.getLosses());
-    System.out.printIn("Pushes: " + stats.getPushes()); 
+    System.out.println("Pushes: " + stats.getPushes()); 
   }
 
   //runs each round of BlackJack

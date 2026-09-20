@@ -1,3 +1,4 @@
+package blackjack;
 public class Statistics {
   private int wins;
   private int losses;

@@ -1,5 +1,7 @@
+package blackjack;
 import student.TestCase;
-Public class PlayerTest extends TestCase{
+
+public class PlayerTest extends TestCase{
   private Player player;
   public void setUp(){
     player = new Player(100);
@@ -13,7 +15,7 @@ Public class PlayerTest extends TestCase{
   public void testGetHand(){
     Hand hand = player.getHand();
     assertNotNull(hand);
-    assertEquals(0, hand.getTotal();
+    assertEquals(0, hand.getTotal());
   }
 
   public void testGetBankroll(){

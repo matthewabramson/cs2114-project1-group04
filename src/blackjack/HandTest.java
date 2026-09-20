@@ -1,3 +1,5 @@
+package blackjack;
+
 import student.TestCase;
 
 public class HandTest extends TestCase {
@@ -13,7 +15,7 @@ public class HandTest extends TestCase {
     }
 
     public void testAddCard() {
-        Card card = new Card("5", 5);
+        Card card = new Card("5", "♣\uFE0F", 5);
 
         hand.addCard(card);
 
@@ -21,30 +23,30 @@ public class HandTest extends TestCase {
     }
 
     public void testMultipleCards() {
-        hand.addCard(new Card("5", 5));
-        hand.addCard(new Card("7", 7));
+        hand.addCard(new Card("5", "♦\uFE0F", 5));
+        hand.addCard(new Card("7", "♣\uFE0F", 7));
 
         assertEquals(12, hand.getTotal());
     }
 
     public void testFaceCards() {
-        hand.addCard(new Card("King", 10));
-        hand.addCard(new Card("Queen", 10));
+        hand.addCard(new Card("King", "♦\uFE0F", 10));
+        hand.addCard(new Card("Queen", "♣\uFE0F", 10));
 
         assertEquals(20, hand.getTotal());
     }
 
     public void testAceAsEleven() {
-        hand.addCard(new Card("Ace", 11));
-        hand.addCard(new Card("9", 9));
+        hand.addCard(new Card("Ace", "♦\uFE0F", 11));
+        hand.addCard(new Card("9", "♣\uFE0F",  9));
 
         assertEquals(20, hand.getTotal());
     }
 
     public void testAceAsOne() {
-        hand.addCard(new Card("Ace", 11));
-        hand.addCard(new Card("9", 9));
-        hand.addCard(new Card("5", 5));
+        hand.addCard(new Card("Ace", "♦\uFE0F", 11));
+        hand.addCard(new Card("9", "♣\uFE0F", 9));
+        hand.addCard(new Card("5", "♦\uFE0F", 5));
 
         // 11 + 9 + 5 = 25
         // Ace changes from 11 to 1
@@ -53,9 +55,9 @@ public class HandTest extends TestCase {
     }
 
     public void testMultipleAces() {
-        hand.addCard(new Card("Ace", 11));
-        hand.addCard(new Card("Ace", 11));
-        hand.addCard(new Card("9", 9));
+        hand.addCard(new Card("Ace", "♣\uFE0F", 11));
+        hand.addCard(new Card("Ace", "♣\uFE0F", 11));
+        hand.addCard(new Card("9", "♦\uFE0F", 9));
 
         // 11 + 11 + 9 = 31
         // One Ace becomes 1
@@ -64,9 +66,9 @@ public class HandTest extends TestCase {
     }
 
     public void testBust() {
-        hand.addCard(new Card("King", 10));
-        hand.addCard(new Card("Queen", 10));
-        hand.addCard(new Card("5", 5));
+        hand.addCard(new Card("King", "♦\uFE0F", 10));
+        hand.addCard(new Card("Queen", "♦\uFE0F", 10));
+        hand.addCard(new Card("5", "♣\uFE0F", 5));
 
         assertEquals(25, hand.getTotal());
     }
