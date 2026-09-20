@@ -5,15 +5,21 @@ public class BlackjackGame {
   private Dealer dealer; 
   private InputHandler input; 
   private Statistics stats; 
-
+  
+  
   public BlackjackGame(int bankroll) {
+      
     deck = new Deck();
     player = new Player(bankroll); 
     dealer = new Dealer();
     input = new InputHandler();
     stats = new Statistics();
   }
-
+  public static void main(String[] args) {
+      BlackjackGame game = new BlackjackGame(1000);
+      game.play();
+      
+  }
   // starts the game 
   public void play() {
     System.out.println("Welcome to Lucky 21 ");
