@@ -32,6 +32,7 @@ public class BlackJackGame {
     System.out.println("Final Stats:");
     System.out.println("Wins: " + stats.getWins());
     System.out.println("Losses: " + stats.getLosses());
+    System.out.printIn("Pushes: " + stats.getPushes()); 
   }
 
   //runs each round of BlackJack
