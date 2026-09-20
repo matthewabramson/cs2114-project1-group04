@@ -40,6 +40,10 @@ public class Player{
   public void subtractBet(){
     bankroll -= currentBet;
   }
+
+  public void clearHand(){
+    hand.clear();
+  }
 }
 
 
