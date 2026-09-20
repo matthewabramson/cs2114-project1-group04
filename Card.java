@@ -27,9 +27,5 @@ public class Card {
     return suit;
   }
 
-  public Card getCard(int index) 
-  {
-    return cards.get(index);
-  }
 
 }
