@@ -5,15 +5,16 @@ import java.util.ArrayList;
 
 public class Deck{
 
-    private static String[] cardSuite = {"♠\uFE0F", "♥\uFE0F", "♦\uFE0F", "♣\uFE0F"};
-    private static String[] cardNumber = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    private static String[] cardSuit = {"♠\uFE0F", "♥\uFE0F", "♦\uFE0F", "♣\uFE0F"};
+    private static String[] cardNumber = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     private static ArrayList<String> cardsDealt = new ArrayList<>();
     private static Random random = new Random();
 
-    public static String dealCard() {
+    public Card dealCard() {
 
         boolean dealCard = true;
         String card = "";
+        Card newCard = null;
 
         while (dealCard) {
 
@@ -21,10 +22,27 @@ public class Deck{
                 cardsDealt.clear();
             }
 
-            int randomCardSuiteIndex = random.nextInt(cardSuite.length);
+            int randomCardSuitIndex = random.nextInt(cardSuit.length);
             int randomCardNumberIndex = random.nextInt(cardNumber.length);
 
-            card = cardNumber[randomCardNumberIndex] + cardSuite[randomCardSuiteIndex];
+            String rank = cardNumber[randomCardNumberIndex];
+            String suit = cardSuit[randomCardSuitIndex];
+            card = rank + suit;
+
+            int value;
+            if (rank.equals("Ace")){
+                value = 11;
+            }
+            else if (rank.equals("J") || rank.equals("Q") || rank.equals("K")){
+                value = 10;
+            }
+            else{
+                value = Integer.parseInt(rank);
+            }
+            newCard = new Card(rank, suit, value);
+                
+                
+        
 
             if (cardsDealt.contains(card)) {
 
@@ -57,7 +75,7 @@ public class Deck{
         }
         cardsDealt.add(card);
 
-        return card;
+        return newCard;
 
     }
 }
