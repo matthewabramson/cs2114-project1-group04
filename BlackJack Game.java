@@ -5,30 +5,31 @@ public class BlackJackGame {
   private InputHandler input; 
   private Statistics stats; 
 
-  public BlackJackGame(int Bankroll) {
+  public BlackJackGame(int bankroll) {
     deck = new Deck();
-    player = new Player(); 
+    player = new Player(bankroll); 
     dealer = new Dealer();
-    input = new inputHandler();
+    input = new InputHandler();
     stats = new Statistics();
   }
 
   // starts the game 
   public void play() {
-    System.out.printIn("Welcome to Lucky 21 ");
+    System.out.println("Welcome to Lucky 21 ");
 
     boolean playAgain = true;
 
     while (playAgain) { 
       playRound();
 
-      string Again = input.getPlayAgain();
+      String again = input.getPlayAgain();
+      playAgain = again.equalsIgnoreCase("again");
       //#
     }
 
-    System.out.printIn("Final Stats:");
-    System.out.printIn("Wins: " + stats.getWins());
-    System.outprintIn("Losses; " + stats.getLosses());
+    System.out.println("Final Stats:");
+    System.out.println("Wins: " + stats.getWins());
+    System.out.println("Losses: " + stats.getLosses());
   }
 
   //runs each round of BlackJack
@@ -39,40 +40,39 @@ public class BlackJackGame {
     }
 
     dealer.clearHand();
-    Player.getHand().clear;
+    player.clearHand();
 
-    int bet = input.getBet(player.getBankroll)); 
-    if (!player.placebet(bet)) { 
-      System.out.printIn("Invalid Bet."); 
+    int bet = input.getBet(); 
+    if (!player.placeBet(bet)) { 
+      System.out.println("Invalid Bet."); 
       return;
     }
 
-    player.setCurrentBet(bet);
-    player.subtractBet(bet);
+    
 
     // The Initial deal 
     player.getHand().addCard(deck.dealCard());
     player.getHand().addCard(deck.dealCard()); 
     dealer.getHand().addCard(deck.dealCard()); 
     // show player total
-    System.out.printIn("Player Hand Total: " + okayer.getHand().getTotal());
+    System.out.println("Player Hand Total: " + player.getHand().getTotal());
 
     // show dealers only card
     Card dealerUpCard = dealer.getHand().getCard(0); 
-    System.out.printIn("Dealer Shows: " + dealerUpCard.getRank() + " (" + dealerUpCard.getValue() + ")");
+    System.out.println("Dealer Shows: " + dealerUpCard.getRank() + " (" + dealerUpCard.getValue() + ")");
 
     // Player turn 
     boolean playerTurn = true;
     while (playerTurn) { 
       String choice = input.getHitOrStay();
 
-      if (choice.equalsIsIgnoreCase("hit")) {
+      if (choice.equalsIgnoreCase("hit")) {
         player.getHand().addCard(deck.dealCard());
-        System.out.printIn("Player Total: " + player.getHand().getTotal());
+        System.out.println("Player Total: " + player.getHand().getTotal());
 
         // When the player busts so dealer dosen't draw
-        if (player.getHand().getTotal(() > 21) { 
-          System.out.printIn("Player busts!");
+        if (player.getHand().getTotal() > 21) { 
+          System.out.println("Player busts!");
           determineWinner();
           return;
         }
@@ -85,7 +85,7 @@ public class BlackJackGame {
     // Dealer turn after player stop hitting/stays 
     while (dealer.shouldHit()) {
       dealer.getHand().addCard(deck.dealCard());
-      System.out.printIn("Dealer Total: " + dealer.getHand().getTotal());
+      System.out.println("Dealer Total: " + dealer.getHand().getTotal());
     }
 
     determineWinner();
