@@ -12,6 +12,10 @@ public class Hand {
         cards.add(card);
     }
 
+    public Card getCard(int index) {
+    return cards.get(index);
+    }
+    
     public void clear(){
         cards.clear();
     }
