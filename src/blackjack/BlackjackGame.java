@@ -1,4 +1,10 @@
 package blackjack;
+
+/**
+ * Controls the main Blackjack game.
+ * The game handles the player, dealer, deck, bets,
+ * player turns, dealer turns, and game statistics.
+ */
 public class BlackjackGame { 
   private Deck deck;
   private Player player; 
@@ -7,6 +13,11 @@ public class BlackjackGame {
   private Statistics stats; 
   
   
+  /**
+   * Creates a new BlackjackGame object.
+   *
+   * @param bankroll the starting amount of money for the player
+   */
   public BlackjackGame(int bankroll) {
       
     deck = new Deck();
@@ -15,12 +26,21 @@ public class BlackjackGame {
     input = new InputHandler();
     stats = new Statistics();
   }
+    /**
+    * Starts the Blackjack game using a starting bankroll of $1000.
+    *
+    *   @param args command-line arguments
+    */
   public static void main(String[] args) {
       BlackjackGame game = new BlackjackGame(1000);
       game.play();
       
   }
-  // starts the game 
+   /**
+   * Starts the game and continues playing rounds until
+   * the player chooses to leave.
+   */
+  
   public void play() {
     System.out.println("Welcome to Lucky 21 ");
 
@@ -42,7 +62,13 @@ public class BlackjackGame {
     System.out.println("Pushes: " + stats.getPushes()); 
   }
 
-  //runs each round of BlackJack
+  /**
+   * Runs one round of Blackjack.
+   * The player places a bet, receives two cards,
+   * and plays by choosing to hit or stand. The dealer
+   * then draws cards until reaching a total of at least 17.
+   */
+  
   public void playRound() {
     if (deck.isEmpty()) {
       deck = new Deck();
@@ -102,6 +128,12 @@ public class BlackjackGame {
 
     determineWinner();
 }
+  /**
+   * Determines the winner of the current round.
+   * The player wins if the dealer busts or if the player's
+   * total is higher than the dealer's total. A tie results
+   * in a push and the player's bet is returned.
+   */
   
   public void determineWinner() {
 
