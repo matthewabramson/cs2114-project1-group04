@@ -5,24 +5,31 @@ import org.junit.Test;
 
 /**
  * Tests the Deck class.
+ * 
+ * @author Prabhav Agarwal (prabhav), Jacob Dial (Jacobd06)
+ * @version Sep 21, 2026
  */
-public class DeckTest {
+public class DeckTest
+{
 
     /**
      * Tests that a new deck is not empty.
      */
     @Test
-    public void testNewDeck() {
+    public void testNewDeck()
+    {
         Deck deck = new Deck();
 
         assertFalse(deck.isEmpty());
     }
 
+
     /**
      * Tests that dealing a card returns a Card.
      */
     @Test
-    public void testDealCard() {
+    public void testDealCard()
+    {
         Deck deck = new Deck();
 
         Card card = deck.dealCard();
@@ -30,16 +37,19 @@ public class DeckTest {
         assertNotNull(card);
     }
 
+
     /**
      * Tests that dealing cards removes them from the deck.
      */
     @Test
-    public void testDealCardRemovesCard() {
+    public void testDealCardRemovesCard()
+    {
         Deck deck = new Deck();
 
         int cardsDealt = 0;
 
-        while (cardsDealt < 416) {
+        while (cardsDealt < 416)
+        {
             assertNotNull(deck.dealCard());
             cardsDealt++;
         }
@@ -47,14 +57,17 @@ public class DeckTest {
         assertTrue(deck.isEmpty());
     }
 
+
     /**
      * Tests that dealing from an empty deck returns null.
      */
     @Test
-    public void testDealEmptyDeck() {
+    public void testDealEmptyDeck()
+    {
         Deck deck = new Deck();
 
-        for (int i = 0; i < 416; i++) {
+        for (int i = 0; i < 416; i++)
+        {
             deck.dealCard();
         }
 
@@ -62,11 +75,13 @@ public class DeckTest {
         assertNull(deck.dealCard());
     }
 
+
     /**
      * Tests that shuffle can be called on the deck.
      */
     @Test
-    public void testShuffle() {
+    public void testShuffle()
+    {
         Deck deck = new Deck();
 
         deck.shuffle();
@@ -74,11 +89,13 @@ public class DeckTest {
         assertFalse(deck.isEmpty());
     }
 
+
     /**
      * Tests that the cards have the correct values.
      */
     @Test
-    public void testCardValues() {
+    public void testCardValues()
+    {
         Deck deck = new Deck();
 
         Card ace = null;
@@ -86,16 +103,20 @@ public class DeckTest {
         Card faceCard = null;
 
         // Look through the deck until each type of card is found.
-        for (int i = 0; i < 416; i++) {
+        for (int i = 0; i < 416; i++)
+        {
             Card card = deck.dealCard();
 
-            if (card.getRank().equals("Ace")) {
+            if (card.getRank().equals("Ace"))
+            {
                 ace = card;
             }
-            else if (card.getRank().equals("5")) {
+            else if (card.getRank().equals("5"))
+            {
                 numberCard = card;
             }
-            else if (card.getRank().equals("K")) {
+            else if (card.getRank().equals("K"))
+            {
                 faceCard = card;
             }
         }
