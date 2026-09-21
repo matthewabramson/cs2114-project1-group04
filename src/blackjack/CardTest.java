@@ -1,5 +1,8 @@
 package blackjack;
 
+/**
+ * Tests the Card class.
+ */
 public class CardTest
     extends student.TestCase
 {
