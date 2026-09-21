@@ -2,9 +2,10 @@ package blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
-<<<<<<< HEAD
 
 /**
+ * Represents the deck of cards used in the Lucky 21 game.
+ *
  * @author Prabhav Argarwal (prabhav), Jacob Dial (Jacobd06)
  * @version Sep 21, 2026
  */
@@ -14,23 +15,10 @@ public class Deck
     private ArrayList<Card> cards;
 
     /**
-     * creates a deck containing 8 standard decks of cards
+     * Creates a deck containing 8 standard decks of cards.
      */
     public Deck()
     {
-=======
-/**
- * Represents the deck of cards used in the Lucky 21 game.
- */
-public class Deck {
-
-    private ArrayList<Card> cards;
-    
-    /**
-     * Creates a deck containing 8 standard decks of cards.
-     */
-    public Deck() {
->>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
         cards = new ArrayList<Card>();
 
         String[] suits = { "♠\uFE0F", "♥\uFE0F", "♦\uFE0F", "♣\uFE0F" };
@@ -40,13 +28,10 @@ public class Deck {
         // 8 decks
         for (int deckNumber = 0; deckNumber < 8; deckNumber++)
         {
-
             for (String suit : suits)
             {
-
                 for (String rank : ranks)
                 {
-
                     int value;
 
                     if (rank.equals("Ace"))
@@ -68,11 +53,10 @@ public class Deck {
             }
         }
     }
-<<<<<<< HEAD
 
 
     /**
-     * shuffles the cards in the deck
+     * Shuffles the cards in the deck.
      */
     public void shuffle()
     {
@@ -81,47 +65,23 @@ public class Deck {
 
 
     /**
-     * checks whether the deck is empty.
+     * Checks whether the deck is empty.
+     *
+     * @return true if the deck is empty, false otherwise
      */
     public boolean isEmpty()
     {
         return cards.isEmpty();
     }
 
-=======
-    
-    /**
-     * Shuffles the cards in the deck.
-     */
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
-
-     /**
-     * Checks if the deck has no cards left.
-     *
-     * @return true if the deck is empty, false otherwise
-     */
-    public boolean isEmpty() {
-        return cards.isEmpty();
-    }
 
     /**
      * Deals one card from the deck.
      *
-     * @return the next card in the deck, or null if the deck is empty
-     */
-    public Card dealCard() {
->>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
-
-    /**
-     * Deals one card from the deck.
-     * 
-     * @return the next card, or null if the deck is empty.
+     * @return the next card, or null if the deck is empty
      */
     public Card dealCard()
     {
-
         if (cards.isEmpty())
         {
             return null;
