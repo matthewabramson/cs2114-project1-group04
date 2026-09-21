@@ -1,9 +1,17 @@
 package blackjack;
 import java.util.Scanner;
 
-
+/**
+ * Handles user input for the Lucky 21 game.
+ */
 public class InputHandler{
-
+    
+    /**
+     * Gets the player's bet.
+     * Keeps asking until the player enters a whole number.
+     *
+     * @return the player's bet
+     */
     private static Scanner scanner = new Scanner(System.in);
 
     public static int getBet(){
@@ -18,6 +26,12 @@ public class InputHandler{
         return scanner.nextInt();
 
     }
+    /**
+     * Gets the player's choice to hit or stand.
+     * Keeps asking until the player enters hit or stand.
+     *
+     * @return the player's choice
+     */
     public static String getHitOrStay(){
         System.out.print("Hit or Stand?");
         String choice = scanner.next();
@@ -30,6 +44,12 @@ public class InputHandler{
         }
         return choice;
     }
+     /**
+     * Gets the player's choice to play again or leave.
+     * Keeps asking until the player enters again or leave.
+     *
+     * @return the player's choice
+     */
     public static String getPlayAgain(){
         System.out.print("Play again or leave? ");
         String choice = scanner.next();
