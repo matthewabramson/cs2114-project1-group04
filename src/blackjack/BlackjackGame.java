@@ -5,7 +5,7 @@
 // do.
 // -- Rudra Dutta (drudra)
 // LLM Statement:
-// // During the preparation of this assignment, I, Jacob Dial used hokieAI in
+// // During the preparation of this assignment, I, Rudra Dutta used hokieAI in
 // assistance for syntax and debugging.
 // After using this tool, I reviewed and edited the content as needed to ensure
 // its
