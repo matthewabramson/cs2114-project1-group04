@@ -9,5 +9,5 @@ The game keeps track of wins, losses, and pushes.
 
 ## How to Compile and Run
 
-Compile the program: `javac BlackjackGame.java`  
-Run: `java BlackjackGame` and selected **Run as -> Java Application**. 
+Compile the program: `javac BlackjackGame.java`  Open the project in Eclispe  
+Run: `java BlackjackGame` and select **Run as -> Java Application**. 
