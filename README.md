@@ -1,5 +1,13 @@
-# cs2114-project1-group04
-We are building a virtual blackjack game
-1. Add student.jar to build path
-2. main method is contained within BlackjackGame.java
-3. 
+# cs2114-project1-group04 - Lucky 21
+# Description
+
+Lucky 21 is a Java-based version of Blackjack. The player places a bet and receives two cards, while the dealer receives one card.
+
+The player can choose to hit or stand. If the player stands, the dealer draws cards until the dealer's hand reaches 17 or higher.
+
+The game keeps track of wins, losses, and pushes.
+
+## How to Compile and Run
+
+Compile the program: `javac BlackjackGame.java`  
+Run: `java BlackjackGame` and selected **Run as -> Java Application**. 
