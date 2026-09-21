@@ -3,6 +3,7 @@ package blackjack;
 import java.util.Scanner;
 
 /**
+<<<<<<< HEAD
  * Handles user input for the blackjack game.
  * 
  * @author Prabhav Agarwal (prabhav), Jacob Dial (Jacobd06)
@@ -11,6 +12,18 @@ import java.util.Scanner;
 public class InputHandler
 {
 
+=======
+ * Handles user input for the Lucky 21 game.
+ */
+public class InputHandler{
+    
+    /**
+     * Gets the player's bet.
+     * Keeps asking until the player enters a whole number.
+     *
+     * @return the player's bet
+     */
+>>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
     private static Scanner scanner = new Scanner(System.in);
 
     /**
@@ -32,6 +45,7 @@ public class InputHandler
         return scanner.nextInt();
 
     }
+<<<<<<< HEAD
 
 
     /**
@@ -41,6 +55,15 @@ public class InputHandler
      */
     public static String getHitOrStay()
     {
+=======
+    /**
+     * Gets the player's choice to hit or stand.
+     * Keeps asking until the player enters hit or stand.
+     *
+     * @return the player's choice
+     */
+    public static String getHitOrStay(){
+>>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
         System.out.print("Hit or Stand?");
         String choice = scanner.next();
 
@@ -53,6 +76,7 @@ public class InputHandler
         }
         return choice;
     }
+<<<<<<< HEAD
 
 
     /**
@@ -62,6 +86,15 @@ public class InputHandler
      */
     public static String getPlayAgain()
     {
+=======
+     /**
+     * Gets the player's choice to play again or leave.
+     * Keeps asking until the player enters again or leave.
+     *
+     * @return the player's choice
+     */
+    public static String getPlayAgain(){
+>>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
         System.out.print("Play again or leave? ");
         String choice = scanner.next();
         while (!choice.equalsIgnoreCase("again")

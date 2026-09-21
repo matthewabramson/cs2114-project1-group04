@@ -2,6 +2,7 @@ package blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
+<<<<<<< HEAD
 
 /**
  * @author Prabhav Argarwal (prabhav), Jacob Dial (Jacobd06)
@@ -17,6 +18,19 @@ public class Deck
      */
     public Deck()
     {
+=======
+/**
+ * Represents the deck of cards used in the Lucky 21 game.
+ */
+public class Deck {
+
+    private ArrayList<Card> cards;
+    
+    /**
+     * Creates a deck containing 8 standard decks of cards.
+     */
+    public Deck() {
+>>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
         cards = new ArrayList<Card>();
 
         String[] suits = { "♠\uFE0F", "♥\uFE0F", "♦\uFE0F", "♣\uFE0F" };
@@ -54,6 +68,7 @@ public class Deck
             }
         }
     }
+<<<<<<< HEAD
 
 
     /**
@@ -73,6 +88,31 @@ public class Deck
         return cards.isEmpty();
     }
 
+=======
+    
+    /**
+     * Shuffles the cards in the deck.
+     */
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
+
+     /**
+     * Checks if the deck has no cards left.
+     *
+     * @return true if the deck is empty, false otherwise
+     */
+    public boolean isEmpty() {
+        return cards.isEmpty();
+    }
+
+    /**
+     * Deals one card from the deck.
+     *
+     * @return the next card in the deck, or null if the deck is empty
+     */
+    public Card dealCard() {
+>>>>>>> 26240350cb747fe6c0ab719ba74d79b3943bc0e9
 
     /**
      * Deals one card from the deck.

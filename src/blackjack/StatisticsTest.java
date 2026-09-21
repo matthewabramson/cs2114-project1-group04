@@ -16,6 +16,10 @@ public class StatisticsTest
     }
 
 
+    /**
+     * This test the getWins() method and makes sure that it returns the 
+     * correct outcome 
+     */
     public void testGetWins()
     {
         assertEquals(stats.getWins(), 0);
@@ -25,7 +29,10 @@ public class StatisticsTest
         assertEquals(stats.getWins(), 2);
     }
 
-
+    /**
+     * This test the getLosses() method and makes sure that it returns the 
+     * correct outcome when the user gets a loss
+     */
     public void testGetLosses()
     {
         assertEquals(stats.getLosses(), 0);
@@ -35,7 +42,10 @@ public class StatisticsTest
         assertEquals(stats.getLosses(), 2);
     }
 
-
+    /**
+     * This test the getPushes() method and makes sure that it returns the 
+     * correct outcome when the user pushes against the dealer
+     */
     public void testGetPushes()
     {
         assertEquals(stats.getPushes(), 0);
